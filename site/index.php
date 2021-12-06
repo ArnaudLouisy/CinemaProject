@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset(&_SESSION['email'] && &_SESSION['mot_de_passe'])) {
+if ($_SESSION['email'] && $_SESSION['mot_de_passe']) {
   header('Location: index.html');
 }
 else {

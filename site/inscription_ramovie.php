@@ -20,8 +20,9 @@ else {
     $requete->execute(array(
         'nom' => $_POST['nom'],
         'prenom' => $_POST['prenom'],
-        'email' => $_POST['email'],
         'mot_de_passe' => $_POST['mot_de_passe'],
+        'email' => $_POST['email'],
+
 
     ));
     header('Location: 1.html');
