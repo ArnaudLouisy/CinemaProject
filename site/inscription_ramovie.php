@@ -1,6 +1,6 @@
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=ramovie_projec;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
 
 
 $req=$bdd->prepare('SELECT * FROM client WHERE email = :email');
