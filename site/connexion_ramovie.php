@@ -17,7 +17,7 @@ if($res){
     header('Location: index.html');
 }
 else{
-    header('Location: 1.html');
+    header('Location: login.html');
 }
 
 ?>

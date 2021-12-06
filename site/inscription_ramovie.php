@@ -3,7 +3,7 @@
 $bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
 
 
-$req=$bdd->prepare('SELECT * FROM client WHERE email = :email');
+$req=$bdd->prepare('SELECT * FROM client WHERE email like :email');
 $req->execute(array(
     'email'=>$_POST['email']
 
@@ -12,7 +12,7 @@ $req->execute(array(
 $res = $req->fetch();
 
 if($res){
-    echo 'compte existant';
+    echo 'Compte existant';
 }
 else {
 
@@ -25,7 +25,7 @@ else {
 
 
     ));
-    header('Location: 1.html');
+    header('Location: login.html');
 }
 
  ?>
