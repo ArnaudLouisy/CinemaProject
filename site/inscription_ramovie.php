@@ -16,14 +16,15 @@ if($res){
 }
 else {
 
-    $requete = $bdd->prepare('INSERT INTO client (nom, prenom,mot_de_passe,email,) VALUES (:nom, :prenom,:mot_de_passe,:email)');
-    $requete->execure(array(
+    $requete = $bdd->prepare('INSERT INTO client (nom, prenom,email,mot_de_passe) VALUES (:nom, :prenom,:mot_de_passe,:email)');
+    $requete->execute(array(
         'nom' => $_POST['nom'],
         'prenom' => $_POST['prenom'],
-        'mot_de_passe' => $_POST['mot_de_passe'],
         'email' => $_POST['email'],
+        'mot_de_passe' => $_POST['mot_de_passe'],
 
     ));
+    header('Location: 1.html');
 }
 
  ?>
