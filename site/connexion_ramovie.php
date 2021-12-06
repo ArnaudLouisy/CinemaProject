@@ -14,7 +14,7 @@ $res = $req->fetchall();
 if($res){
     $_SESSION['email'] = $res['email'];
     $_SESSION['mot_de_passe'] = $res['mot_de_passe'];
-    header('Location: espace_membre_ramovie.php');
+    header('Location: index.html');
 }
 else{
     header('Location: 1.html');
