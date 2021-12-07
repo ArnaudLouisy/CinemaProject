@@ -16,7 +16,7 @@ if($res){
 }
 else {
 
-    $requete = $bdd->prepare('INSERT INTO client (nom, prenom,email,mot_de_passe) VALUES (:nom, :prenom,:mot_de_passe,:email)');
+    $requete = $bdd->prepare('INSERT INTO client (nom,prenom,email,mot_de_passe) VALUES (:nom, :prenom,:email,:mot_de_passe)');
     $requete->execute(array(
         'nom' => $_POST['nom'],
         'prenom' => $_POST['prenom'],
