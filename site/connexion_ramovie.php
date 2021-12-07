@@ -1,5 +1,6 @@
 <?php
 session_start();
+var_dump();
 
 $bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
 
@@ -14,7 +15,7 @@ $res = $req->fetch();
 if($res){
     $_SESSION['email'] = $res['email'];
 
-    header('Location: index.html');
+    header('Location: accueil_c.html');
 }
 else{
     header('Location: login.html');
