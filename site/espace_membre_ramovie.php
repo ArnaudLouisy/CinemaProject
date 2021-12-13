@@ -29,15 +29,15 @@ $prenom = $res['prenom'];
 <form method="post" action="update.php">
     <div>
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" value="<?php echo $mail ?>">
+        <input type="text" id="nom" name="nom" value="<?php echo $nom ?>" placeholder="Nom de famille">
     </div>
     <div>
         <label for="prenom">Prenom :</label>
-        <input type="text" id="prenom" name="prenom" value="<?php echo $mail ?>">
+        <input type="text" id="prenom" name="prenom" value="<?php echo $prenom ?>" placeholder="Prénom">
     </div>
     <div>
         <label for="email">E-mail :</label>
-        <input type="text" id="email" name="email" value="<?php echo $mail ?>">
+        <input type="text" id="email" name="email" value="<?php echo $mail ?>" placeholder="Adresse mail">
     </div>
     <div>
         <label for="password">Mot de passe :</label>
