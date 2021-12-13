@@ -23,21 +23,28 @@ $res=$req -> fetchAll();
       </center>
       <br>
       <br>
-      <br>
 
 <?php
 foreach ($res as $value){
 
 ?>
+    <br>
+    <br>
     <?php
-    echo $value ['titre']."<br>";
-    echo $value ['description']."<br>";
+    echo $value ['titre']."<br>";?><br>
+   <?php
+    echo $value ['description']."<br>";?>
+        <br>
+    <?php
     echo $value ['annee_sortie']."<br>";
     ?>
-      <img src= <?php  echo $value ['image']; ?>  alt="" width="200">
+<br>
+      <img src= assets/films/<?php  echo $value ['image']; ?>  alt="" width="200">
       <?php
 }
       ?>
+      <br> <br>
+      <a href="index.php">Retourner a l'accueil</a>
   </table>
   </body>
 </html>
