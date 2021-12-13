@@ -1,11 +1,14 @@
-<*-- à faire -->
 <?php
 
-
-$sql = "UPDATE users SET name=?, prenom=?, mot_de_passe=? WHERE email=?";
-$req= $pdo->prepare($sql);
-$req->execute([$name, $prenom, $mot_de_passe, $email]);
-
-
-
- ?>
+session_start();
+$mail = $_SESSION['email'];
+$bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
+$req = $bdd -> prepare("UPDATE client SET nom=:nom, prenom=:prenom, email=:email, mot_de_passe=:mot_de_passe WHERE id_client=:id_client");
+$req->execute(array(
+    'prenom'=>$_POST['prenom'],
+    'nom'=>$_POST['nom'],
+    'email'=>$_POST['email'],
+    'mot_de_passe'=>$_POST['mot_de_passe'],
+    'id_client'=>$_SESSION['id'],
+));
+?>

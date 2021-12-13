@@ -12,6 +12,7 @@ $res = $req->fetch();
 
 if($res){
     $_SESSION['email'] = $res['email'];
+    $_SESSION['id'] = $res['id_client'];
 
     header('Location: accueil_c.html');
 }
