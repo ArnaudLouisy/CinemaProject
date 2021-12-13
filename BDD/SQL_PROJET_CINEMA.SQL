@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS film(
 `titre` varchar(50) NOT NULL,
 `année_sortie` int(3) NOT NULL,
 `description` varchar(50) NOT NULL,
+`image` varchar(50) NPT NULL,
 PRIMARY KEY (`id_film`)
 )ENGINE=InnoDB ;
 

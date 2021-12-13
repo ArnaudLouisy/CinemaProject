@@ -6,6 +6,7 @@ if (!isset($_SESSION['email'])) {
 }
 ?>
 
+
 <html>
 <head>
 <title>ESPACE MEMBRES - RAMOVIE</title>
@@ -13,10 +14,22 @@ if (!isset($_SESSION['email'])) {
 
 <body>
 
+	<?php
+	session_start();
+	$bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
+
+
+//	$req = $bdd->prepare("SELECT * FROM client WHERE email=$_SESSION['email']");
+	$req = $pdo->prepare("SELECT * FROM users WHERE email=?");
+	$req ->execute(['email' => $_SESSION['email']]);
+	$res = $req->fetch();
+
+	 ?>
+
 	<form method="post">
 	    <div>
 	        <label for="nom">Nom :</label>
-	        <input type="text" id="nom" name="nom">
+	        <input type="text" id="nom" name="nom" value="<?php echo $res["nom"]?>">
 	    </div>
 	    <div>
 	        <label for="prenom">Prenom :</label>
@@ -30,35 +43,13 @@ if (!isset($_SESSION['email'])) {
 				 <label for="password">Mot de passe :</label>
 				 <input type="password" id="password" name="mot_de_passe">
 		 </div>
+		 <div>
+		 	 <input type="submit">
+		 </div>
 	</form>
 <a href="deco.php">Déconnexion</a> <br>
 <a href="index.php">Retourner a l'accueil</a>
-<?php
-session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
-$req=$bdd->prepare('SELECT * FROM client WHERE email  = :email and nom = :nom and prenom = :prenom ');
-$req->execute(array(
-  'email'=>$_POST['email'],
-  'nom'=>$_POST['email'],
-  'nom'=>$_POST['email'],
-));
 
-$res = $req->fetch();
-if($res){
-    echo 'Compte existant';
-}
-else {
-
-    $requete = $bdd->prepare('INSERT INTO client (nom,prenom,email,mot_de_passe) VALUES (:nom, :prenom,:email,:mot_de_passe)');
-    $requete->execute(array(
-        'nom' => $_POST['nom'],
-        'prenom' => $_POST['prenom'],
-        'mot_de_passe' => $_POST['mot_de_passe'],
-        'email' => $_POST['email'],
-    ));
-    header('Location: login.html');
-}
- ?>
 
 </body>
 </html>
