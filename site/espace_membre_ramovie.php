@@ -26,7 +26,7 @@ if (!isset($_SESSION['email'])) {
 
 	 ?>
 
-	<form method="post">
+	<form method="post" action="update.php">
 	    <div>
 	        <label for="nom">Nom :</label>
 	        <input type="text" id="nom" name="nom" value="<?php echo $res["nom"]?>">

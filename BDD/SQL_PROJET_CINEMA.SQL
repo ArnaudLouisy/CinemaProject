@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS film(
 `titre` varchar(50) NOT NULL,
 `année_sortie` int(3) NOT NULL,
 `description` varchar(50) NOT NULL,
-`image` varchar(50) NPT NULL,
+`image` varchar(50) NOT NULL,
 PRIMARY KEY (`id_film`)
 )ENGINE=InnoDB ;
 
@@ -67,3 +67,5 @@ ADD CONSTRAINT `fk_correspond_tarif` FOREIGN KEY (`ref_tarif`) REFERENCES `tarif
 
 ALTER TABLE `salle_de_cinema`
 ADD CONSTRAINT `fk_salle_de_cinema_film`FOREIGN KEY (`ref_film`) REFERENCES `film`(`id_film`);
+
+ALTER TABLE `film` CHANGE `image` `image` BLOB NOT NULL;

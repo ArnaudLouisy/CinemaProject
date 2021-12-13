@@ -1,4 +1,5 @@
-// à faire<?php
+<*-- à faire -->
+<?php
 
 
 $sql = "UPDATE users SET name=?, prenom=?, mot_de_passe=? WHERE email=?";

@@ -1,7 +1,5 @@
 <?php
 session_start();
-var_dump();
-
 $bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
 
 $req = $bdd->prepare('SELECT * FROM client WHERE email = :email AND mot_de_passe = :mot_de_passe');
