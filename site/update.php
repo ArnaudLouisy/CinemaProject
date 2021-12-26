@@ -11,4 +11,5 @@ $req->execute(array(
     'mot_de_passe'=>$_POST['mot_de_passe'],
     'id_client'=>$_SESSION['id'],
 ));
+header('Location: index.php');
 ?>
