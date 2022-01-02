@@ -4,6 +4,20 @@ if (!isset($_SESSION['email'])) {
     header ('Location: index.php');
     exit();
 }
+$bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
+
+$req = $bdd->prepare('SELECT * FROM client WHERE id = :id');
+$req->execute(array(
+    'id'=>1
+  ));
+  $res = $req->fetch();
+  if($res){
+      $_SESSION['id'] = $res['id_client'];
+  }
+  if ($_SESSION['id'] == '1') {
+    header('Location: espace_admin.php');
+  }
+  var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
