@@ -1,5 +1,5 @@
 <?php
-var_dump($_POST);
+
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
 if (!$_SESSION['id']) {
@@ -17,5 +17,3 @@ $req->execute(array(
 ?>
       <br> <br>
       <a href="espace_admin.php">Retourner a l'espace administrateur</a>
-
-<?php var_dump($_POST); var_dump($res)?>

@@ -6,16 +6,13 @@ if (!isset($_SESSION['email'])) {
 }
 $bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
 
-$req = $bdd->prepare('SELECT * FROM client WHERE id = :id');
+$req = $bdd->prepare('SELECT * FROM client WHERE id_client = :id');
 $req->execute(array(
-    'id'=>1
+    'id'=>$_SESSION['id']
   ));
   $res = $req->fetch();
-  if($res){
-      $_SESSION['id'] == $res['id_client'];
-  }
-  if ($res['admin'] == '1') {
-    header('Location: espace_admin.php');
+  if ($res['admin'] = 0) {
+    header('Location: menu_admin.html');
   }
 ?>
 
@@ -23,7 +20,7 @@ $req->execute(array(
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Muhamad Nauval Azhar">
+	<meta name="author" content="Lazar,Louisy,Tran">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="description" content="This is a login page template based on Bootstrap 5">
 	<title>ESPACE MEMBRES - RAMOVIE</title>

@@ -13,6 +13,7 @@ $res = $req->fetch();
 
 if($res){
     echo 'Compte existant';
+    header('Refresh: 10; Location=register.html');
 }
 else {
 

@@ -98,7 +98,9 @@ foreach ($res as $value){
           echo $value ['annee_sortie']."<br>";
           ?></cite>
         </figcaption>
+        <a class="btn btn-secondary" href="reservation.php" role="button">RÉSERVER</a>
       </figure>
+
 
       <?php
 }
