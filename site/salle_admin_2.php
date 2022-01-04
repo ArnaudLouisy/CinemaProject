@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -13,7 +14,5 @@ $req->execute(array(
   'type_salle'=>$_POST['type_salle'],
   'ref_film'=>$film,
 ));
-
+header('Location: menu_admin.html');
 ?>
-      <br> <br>
-      <a href="espace_admin.php">Retourner a l'espace administrateur</a>

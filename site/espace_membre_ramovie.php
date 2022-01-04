@@ -6,13 +6,13 @@ if (!isset($_SESSION['email'])) {
 }
 $bdd = new PDO('mysql:host=localhost;dbname=ramovie_project;charset=utf8', 'root', '');
 
-$req = $bdd->prepare('SELECT * FROM client WHERE id_client = :id');
+$req = $bdd->prepare('SELECT * FROM client WHERE id_client = :id_client');
 $req->execute(array(
-    'id'=>$_SESSION['id']
+    'id_client'=>$_SESSION['id']
   ));
   $res = $req->fetch();
-  if ($res['admin'] = 0) {
-    header('Location: menu_admin.html');
+  if ($res['admin'] == 1) {
+    echo "<br><div class='text-center'><h3>Mode Administrateur</h3><br><a class='btn btn-secondary' href='menu_admin.php' role='button'>Espace Admin</a></div>";
   }
 ?>
 

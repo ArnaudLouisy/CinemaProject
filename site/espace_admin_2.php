@@ -10,7 +10,5 @@ $req->execute(array(
     'id_client'=>$_POST['id'],
     'admin'=>$a1
 ));
-var_dump($_POST);
-var_dump($req);
 //header('Location: index.php');
 ?>

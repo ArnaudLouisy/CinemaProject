@@ -54,10 +54,10 @@ $res=$req -> fetchAll();
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
                     <h2 class="text-white font-weight-bold">Accéder à notre liste de films, juste en dessous !</h2>
-                    <hr class="divider" />
+                    <hr class="divider">
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">Une large selection pour un prix imbattable ! #rat</p>
+                    <p class="text-white-75 mb-5">Une large selection un prix imbattable ! #rat</p>
                     <a class="btn btn-danger btn-xl" href="#about">Voir la liste des films</a>
                 </div>
             </div>
@@ -106,7 +106,7 @@ foreach ($res as $value){
 }
       ?>
       <br> <br>
-      <a href="index.php">Retourner a l'accueil</a>
+      <a class="btn btn-danger" href="index.php" role="button">Accueil</a>
   </table>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

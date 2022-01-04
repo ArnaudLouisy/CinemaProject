@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 04 jan. 2022 à 14:54
+-- Généré le :  mar. 04 jan. 2022 à 16:00
 -- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Version de PHP :  7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `mot_de_passe` varchar(50) NOT NULL,
   `admin` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_client`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `client`
@@ -45,8 +45,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 INSERT INTO `client` (`id_client`, `nom`, `prenom`, `email`, `mot_de_passe`, `admin`) VALUES
 (1, 'Administrateur', 'Admin ', 'admin@lprs.fr', 'azerty1234', 1),
-(2, 'TRAN', 'Killian', 'k.tran@lprs.fr', 'mauxdepass', 1),
-(3, 'Killian', 'Arnaud', 'a.louisy@lprs.fr', '', 1);
+(2, 'TRAN', 'Killian', 'k.tran@lprs.fr', 'mauxdepass', 1);
 
 -- --------------------------------------------------------
 
@@ -102,6 +101,7 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `id_reservation` int(16) NOT NULL AUTO_INCREMENT,
   `moyen_paiment` varchar(50) NOT NULL,
   `date_reservation` int(8) NOT NULL,
+  `heure_reservation` time NOT NULL,
   `ref_client` int(16) NOT NULL,
   `ref_salle` int(16) NOT NULL,
   PRIMARY KEY (`id_reservation`),
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `salle_de_cinema` (
 
 INSERT INTO `salle_de_cinema` (`id_salle`, `nom_salle`, `nombre_places`, `type_salle`, `ref_film`) VALUES
 (1, '1', 25, '4DX', 1),
-(2, '2', 40, 'IMax', 1);
+(2, '2', 50, 'Ice', 1);
 
 -- --------------------------------------------------------
 
