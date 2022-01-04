@@ -12,12 +12,11 @@ $req->execute(array(
   ));
   $res = $req->fetch();
   if($res){
-      $_SESSION['id'] = $res['id_client'];
+      $_SESSION['id'] == $res['id_client'];
   }
-  if ($_SESSION['id'] == '1') {
+  if ($res['admin'] == '1') {
     header('Location: espace_admin.php');
   }
-  var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
