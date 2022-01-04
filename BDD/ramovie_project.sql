@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 04 jan. 2022 à 16:00
+-- Généré le :  mar. 04 jan. 2022 à 16:05
 -- Version du serveur :  5.7.26
--- Version de PHP :  7.3.5
+-- Version de PHP :  7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `prenom` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `mot_de_passe` varchar(50) NOT NULL,
-  `admin` int(1) NOT NULL DEFAULT '0',
+  `admin` varchar(1) NOT NULL,
   PRIMARY KEY (`id_client`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `client` (
 --
 
 INSERT INTO `client` (`id_client`, `nom`, `prenom`, `email`, `mot_de_passe`, `admin`) VALUES
-(1, 'Administrateur', 'Admin ', 'admin@lprs.fr', 'azerty1234', 1),
-(2, 'TRAN', 'Killian', 'k.tran@lprs.fr', 'mauxdepass', 1);
+(1, 'Administrateur', 'Admin ', 'admin@lprs.fr', 'azerty1234', '1'),
+(2, 'TRAN', 'Killian', 'k.tran@lprs.fr', 'mauxdepass', '1');
 
 -- --------------------------------------------------------
 
